@@ -1,0 +1,31 @@
+# General
+.DS_Store
+.env
+node_modules/
+dist/
+build/
+*.log
+
+# Sensitive Data / Maps
+data/maps/source/*
+!data/maps/source/.gitkeep
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Frontend (Vite)
+frontend/node_modules/
+frontend/dist/
+frontend/.env
+frontend/.env.*.local
+
+# Temp Files
+frontend/test_nodes.jpg

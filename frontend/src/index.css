@@ -1,0 +1,12 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, sans-serif;
+  background-color: #f9fafb;
+  color: #111827;
+}
+
+.animate-dash { animation: dash 1s linear infinite; }
+@keyframes dash { to { stroke-dashoffset: -6; } }

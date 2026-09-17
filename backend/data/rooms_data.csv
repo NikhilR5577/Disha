@@ -1,0 +1,9 @@
+id,name_en,name_hi,floor,category,search_keywords_en,search_keywords_hi,is_room
+d_main_entrance,Main Entrance,मुख्य द्वार,1,entrance,"entrance, gate, front","गेट, मुख्य, द्वार",1
+d_reception,Reception,पूछताछ,1,reception,"reception, info, help","पूछताछ, मदद, रिसेप्शन",1
+d_doctor,Doctor OPD,डॉक्टर ओपीडी,1,doctor,"doctor, physician, consult","डॉक्टर, चिकित्सक",1
+d_pharmacy,Pharmacy,दवाखाना,1,pharmacy,"pharmacy, medicine, pills","दवा, दवाई, दवाखाना",1
+n_hall_1,Hall 1,हॉल 1,1,hall,,,0
+n_hall_2,Hall 2,हॉल 2,1,hall,,,0
+n_hall_left,Hall Left,हॉल बायाँ,1,hall,,,0
+n_hall_right,Hall Right,हॉल दायाँ,1,hall,,,0

@@ -1,0 +1,8 @@
+node1_id,node2_id,distance,is_accessible,direction
+d_main_entrance,n_hall_1,5.0,1,straight
+n_hall_1,d_reception,10.0,1,straight
+d_reception,n_hall_2,5.0,1,straight
+n_hall_2,n_hall_left,14.0,1,left
+n_hall_2,n_hall_right,14.0,1,right
+n_hall_left,d_doctor,0.0,1,straight
+n_hall_right,d_pharmacy,0.0,1,straight

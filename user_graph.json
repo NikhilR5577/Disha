@@ -1,0 +1,864 @@
+{
+  "rooms": [
+    {
+      "x": 16.33,
+      "y": 89.39,
+      "type": "room",
+      "name": "Main Entrance"
+    },
+    {
+      "x": 16.48,
+      "y": 91.94,
+      "type": "room",
+      "name": "Ambulance Bay"
+    },
+    {
+      "x": 16.48,
+      "y": 95.64,
+      "type": "room",
+      "name": "Reception"
+    },
+    {
+      "x": 2.98,
+      "y": 60.43,
+      "type": "room",
+      "name": "Casualty"
+    },
+    {
+      "x": 2.28,
+      "y": 87.93,
+      "type": "room",
+      "name": "Dressing Room"
+    },
+    {
+      "x": 5.43,
+      "y": 87.93,
+      "type": "room",
+      "name": "Psychiatry Department"
+    },
+    {
+      "x": 8.83,
+      "y": 87.93,
+      "type": "room",
+      "name": "Emergency Room"
+    },
+    {
+      "x": 12.31,
+      "y": 87.94,
+      "type": "room",
+      "name": "Help Desk"
+    },
+    {
+      "x": 2.49,
+      "y": 68.4,
+      "type": "room",
+      "name": "E.C.G. Room"
+    },
+    {
+      "x": 6.89,
+      "y": 68.4,
+      "type": "room",
+      "name": "Medicine OPD"
+    },
+    {
+      "x": 2.64,
+      "y": 75.55,
+      "type": "room",
+      "name": "Medical Specialist"
+    },
+    {
+      "x": 6.99,
+      "y": 75.55,
+      "type": "room",
+      "name": "NCD Clinic"
+    },
+    {
+      "x": 1.39,
+      "y": 81.55,
+      "type": "room",
+      "name": "Washroom"
+    },
+    {
+      "x": 7.84,
+      "y": 56.73,
+      "type": "room",
+      "name": "Nursing Staff"
+    },
+    {
+      "x": 12.09,
+      "y": 56.63,
+      "type": "room",
+      "name": "Store Room"
+    },
+    {
+      "x": 21.69,
+      "y": 56.63,
+      "type": "room",
+      "name": "Dental Clinic"
+    },
+    {
+      "x": 21.69,
+      "y": 61.28,
+      "type": "room",
+      "name": "Dental OPD"
+    },
+    {
+      "x": 21.69,
+      "y": 66.33,
+      "type": "room",
+      "name": "Surgical OPD"
+    },
+    {
+      "x": 21.69,
+      "y": 71.08,
+      "type": "room",
+      "name": "ENT OPD"
+    },
+    {
+      "x": 21.69,
+      "y": 75.88,
+      "type": "room",
+      "name": "Orthopedic OPD"
+    },
+    {
+      "x": 21.69,
+      "y": 80.83,
+      "type": "room",
+      "name": "Plaster Room"
+    },
+    {
+      "x": 21.69,
+      "y": 85.63,
+      "type": "room",
+      "name": "Anti Rabies Room"
+    },
+    {
+      "x": 29.86,
+      "y": 56.61,
+      "type": "room",
+      "name": "X-Ray Panjian"
+    },
+    {
+      "x": 29.86,
+      "y": 63.51,
+      "type": "room",
+      "name": "X-Ray Room (Radiology Department)"
+    },
+    {
+      "x": 29.86,
+      "y": 71.76,
+      "type": "room",
+      "name": "DEIC (District Early Intervention Centre)"
+    },
+    {
+      "x": 29.86,
+      "y": 50.11,
+      "type": "room",
+      "name": "Sonography Room"
+    },
+    {
+      "x": 27.31,
+      "y": 84.93,
+      "type": "room",
+      "name": "Drug/Medicine Store Room"
+    },
+    {
+      "x": 32.26,
+      "y": 84.93,
+      "type": "room",
+      "name": "RMO Office"
+    },
+    {
+      "x": 36.86,
+      "y": 84.98,
+      "type": "room",
+      "name": "Quality Branch"
+    },
+    {
+      "x": 45.16,
+      "y": 84.98,
+      "type": "room",
+      "name": "Medical Board"
+    },
+    {
+      "x": 49.96,
+      "y": 84.98,
+      "type": "room",
+      "name": "Civil Surgeon Office"
+    },
+    {
+      "x": 42.26,
+      "y": 60.92,
+      "type": "room",
+      "name": "Park"
+    },
+    {
+      "x": 20.79,
+      "y": 27.37,
+      "type": "room",
+      "name": "Record Room"
+    },
+    {
+      "x": 28.74,
+      "y": 27.42,
+      "type": "room",
+      "name": "Ward No. 3 - General Male Ward"
+    },
+    {
+      "x": 37.43,
+      "y": 20.71,
+      "type": "room",
+      "name": "Ward No. 4 - Male Surgery Ward"
+    },
+    {
+      "x": 38.93,
+      "y": 20.71,
+      "type": "room",
+      "name": "Ward No. 5 - Female Surgery Ward"
+    },
+    {
+      "x": 38.13,
+      "y": 22.06,
+      "type": "room",
+      "name": "Ward No. 6 - Female Medical Ward"
+    },
+    {
+      "x": 43.48,
+      "y": 25.46,
+      "type": "room",
+      "name": "Ward No. 1 - Male Medical Ward"
+    },
+    {
+      "x": 41.63,
+      "y": 38.51,
+      "type": "room",
+      "name": "Ward No. 2 - Male Surgical & Trauma Ward"
+    },
+    {
+      "x": 22.58,
+      "y": 34.96,
+      "type": "room",
+      "name": "Kitchen"
+    },
+    {
+      "x": 22.28,
+      "y": 45.16,
+      "type": "room",
+      "name": "Umang Swasth Kendre"
+    },
+    {
+      "x": 22.18,
+      "y": 49.91,
+      "type": "room",
+      "name": "Pharmacy"
+    },
+    {
+      "x": 16.18,
+      "y": 1.79,
+      "type": "room",
+      "name": "ICU"
+    },
+    {
+      "x": 11.93,
+      "y": 10.54,
+      "type": "room",
+      "name": "CT Scan"
+    },
+    {
+      "x": 40.51,
+      "y": 2.23,
+      "type": "room",
+      "name": "Dialysis Centre"
+    },
+    {
+      "x": 11.76,
+      "y": 18.09,
+      "type": "room",
+      "name": "Waiting Room"
+    },
+    {
+      "x": 12.51,
+      "y": 40.4,
+      "type": "room",
+      "name": "Pathology"
+    },
+    {
+      "x": 12.51,
+      "y": 41.85,
+      "type": "room",
+      "name": "Blood Bank"
+    },
+    {
+      "x": 41.43,
+      "y": 12.25,
+      "type": "room",
+      "name": "Badminton Court"
+    },
+    {
+      "x": 68.26,
+      "y": 3.1,
+      "type": "room",
+      "name": "Maternity Ward"
+    },
+    {
+      "x": 63.43,
+      "y": 11.96,
+      "type": "room",
+      "name": "Labour Room"
+    },
+    {
+      "x": 89.59,
+      "y": 1.9,
+      "type": "room",
+      "name": "Gynae & Obs Operation Theatre"
+    },
+    {
+      "x": 73.84,
+      "y": 20.93,
+      "type": "room",
+      "name": "ANC Ward"
+    },
+    {
+      "x": 79.01,
+      "y": 31.1,
+      "type": "room",
+      "name": "STI/RTI Clinic"
+    },
+    {
+      "x": 65.26,
+      "y": 28.15,
+      "type": "room",
+      "name": "Female Wash Room"
+    },
+    {
+      "x": 72.26,
+      "y": 41.16,
+      "type": "room",
+      "name": "Obstetric & Gynecology OPD"
+    },
+    {
+      "x": 78.68,
+      "y": 40.95,
+      "type": "room",
+      "name": "Sonography for Pregnant Women"
+    },
+    {
+      "x": 85.59,
+      "y": 41.82,
+      "type": "room",
+      "name": "Family Welfare Counselling & Registration Room"
+    },
+    {
+      "x": 97.18,
+      "y": 16.23,
+      "type": "room",
+      "name": "Vaccination Room"
+    },
+    {
+      "x": 94.26,
+      "y": 21.15,
+      "type": "room",
+      "name": "Help Desk / Registration"
+    },
+    {
+      "x": 94.93,
+      "y": 25.2,
+      "type": "room",
+      "name": "Entrance No. 2"
+    },
+    {
+      "x": 94.76,
+      "y": 30.34,
+      "type": "room",
+      "name": "Pedia & Gynae Medicine"
+    },
+    {
+      "x": 94.43,
+      "y": 35.48,
+      "type": "room",
+      "name": "Focal Point"
+    },
+    {
+      "x": 93.26,
+      "y": 5.07,
+      "type": "room",
+      "name": "SNCU Ward"
+    },
+    {
+      "x": 93.29,
+      "y": 6.66,
+      "type": "room",
+      "name": "NRC Ward"
+    },
+    {
+      "x": 93.29,
+      "y": 7.96,
+      "type": "room",
+      "name": "PICU Ward"
+    },
+    {
+      "x": 93.33,
+      "y": 9.18,
+      "type": "room",
+      "name": "Pediatric Ward"
+    }
+  ],
+  "paths": [
+    {
+      "x": 16.33,
+      "y": 85.65,
+      "type": "path",
+      "name": "Path Node 1"
+    },
+    {
+      "x": 16.33,
+      "y": 80.75,
+      "type": "path",
+      "name": "Path Node 2"
+    },
+    {
+      "x": 16.33,
+      "y": 76.25,
+      "type": "path",
+      "name": "Path Node 3"
+    },
+    {
+      "x": 16.33,
+      "y": 71.15,
+      "type": "path",
+      "name": "Path Node 4"
+    },
+    {
+      "x": 16.33,
+      "y": 66.7,
+      "type": "path",
+      "name": "Path Node 5"
+    },
+    {
+      "x": 16.33,
+      "y": 61.75,
+      "type": "path",
+      "name": "Path Node 6"
+    },
+    {
+      "x": 16.33,
+      "y": 56.8,
+      "type": "path",
+      "name": "Path Node 7"
+    },
+    {
+      "x": 16.33,
+      "y": 50.5,
+      "type": "path",
+      "name": "Path Node 8"
+    },
+    {
+      "x": 16.33,
+      "y": 45.3,
+      "type": "path",
+      "name": "Path Node 9"
+    },
+    {
+      "x": 16.33,
+      "y": 42.1,
+      "type": "path",
+      "name": "Path Node 10"
+    },
+    {
+      "x": 16.33,
+      "y": 40.65,
+      "type": "path",
+      "name": "Path Node 11"
+    },
+    {
+      "x": 16.33,
+      "y": 27.6,
+      "type": "path",
+      "name": "Path Node 12"
+    },
+    {
+      "x": 16.33,
+      "y": 18.3,
+      "type": "path",
+      "name": "Path Node 13"
+    },
+    {
+      "x": 16.33,
+      "y": 10.8,
+      "type": "path",
+      "name": "Path Node 14"
+    },
+    {
+      "x": 14.23,
+      "y": 42.1,
+      "type": "path",
+      "name": "Path Node 15"
+    },
+    {
+      "x": 28.58,
+      "y": 40.65,
+      "type": "path",
+      "name": "Path Node 16"
+    },
+    {
+      "x": 28.58,
+      "y": 32.6,
+      "type": "path",
+      "name": "Path Node 17"
+    },
+    {
+      "x": 26.83,
+      "y": 32.6,
+      "type": "path",
+      "name": "Path Node 18"
+    },
+    {
+      "x": 35.03,
+      "y": 32.6,
+      "type": "path",
+      "name": "Path Node 19"
+    },
+    {
+      "x": 35.03,
+      "y": 12.55,
+      "type": "path",
+      "name": "Path Node 20"
+    },
+    {
+      "x": 35.03,
+      "y": 4.85,
+      "type": "path",
+      "name": "Path Node 21"
+    },
+    {
+      "x": 35.03,
+      "y": 49.7,
+      "type": "path",
+      "name": "Path Node 22"
+    },
+    {
+      "x": 35.03,
+      "y": 56.95,
+      "type": "path",
+      "name": "Path Node 23"
+    },
+    {
+      "x": 35.03,
+      "y": 63.8,
+      "type": "path",
+      "name": "Path Node 24"
+    },
+    {
+      "x": 35.03,
+      "y": 67.25,
+      "type": "path",
+      "name": "Path Node 25"
+    },
+    {
+      "x": 36.48,
+      "y": 67.25,
+      "type": "path",
+      "name": "Path Node 26"
+    },
+    {
+      "x": 35.03,
+      "y": 71.8,
+      "type": "path",
+      "name": "Path Node 27"
+    },
+    {
+      "x": 35.03,
+      "y": 78.8,
+      "type": "path",
+      "name": "Path Node 28"
+    },
+    {
+      "x": 40.83,
+      "y": 78.8,
+      "type": "path",
+      "name": "Path Node 29"
+    },
+    {
+      "x": 48.48,
+      "y": 78.8,
+      "type": "path",
+      "name": "Path Node 30"
+    },
+    {
+      "x": 40.83,
+      "y": 89.3,
+      "type": "path",
+      "name": "Path Node 31"
+    },
+    {
+      "x": 45.28,
+      "y": 89.3,
+      "type": "path",
+      "name": "Path Node 32"
+    },
+    {
+      "x": 50.03,
+      "y": 89.3,
+      "type": "path",
+      "name": "Path Node 33"
+    },
+    {
+      "x": 36.83,
+      "y": 89.3,
+      "type": "path",
+      "name": "Path Node 34"
+    },
+    {
+      "x": 32.28,
+      "y": 89.3,
+      "type": "path",
+      "name": "Path Node 35"
+    },
+    {
+      "x": 27.33,
+      "y": 89.3,
+      "type": "path",
+      "name": "Path Node 36"
+    },
+    {
+      "x": 21.68,
+      "y": 89.3,
+      "type": "path",
+      "name": "Path Node 37"
+    },
+    {
+      "x": 18.58,
+      "y": 89.3,
+      "type": "path",
+      "name": "Path Node 38"
+    },
+    {
+      "x": 16.28,
+      "y": 81.55,
+      "type": "path",
+      "name": "Path Node 39"
+    },
+    {
+      "x": 12.38,
+      "y": 81.55,
+      "type": "path",
+      "name": "Path Node 40"
+    },
+    {
+      "x": 8.78,
+      "y": 81.55,
+      "type": "path",
+      "name": "Path Node 41"
+    },
+    {
+      "x": 5.33,
+      "y": 81.55,
+      "type": "path",
+      "name": "Path Node 42"
+    },
+    {
+      "x": 5.33,
+      "y": 84.45,
+      "type": "path",
+      "name": "Path Node 43"
+    },
+    {
+      "x": 8.68,
+      "y": 84.45,
+      "type": "path",
+      "name": "Path Node 44"
+    },
+    {
+      "x": 12.33,
+      "y": 84.45,
+      "type": "path",
+      "name": "Path Node 45"
+    },
+    {
+      "x": 3.33,
+      "y": 84.45,
+      "type": "path",
+      "name": "Path Node 46"
+    },
+    {
+      "x": 3.33,
+      "y": 81.65,
+      "type": "path",
+      "name": "Path Node 47"
+    },
+    {
+      "x": 2.63,
+      "y": 71.7,
+      "type": "path",
+      "name": "Path Node 48"
+    },
+    {
+      "x": 6.93,
+      "y": 71.7,
+      "type": "path",
+      "name": "Path Node 49"
+    },
+    {
+      "x": 16.28,
+      "y": 71.7,
+      "type": "path",
+      "name": "Path Node 50"
+    },
+    {
+      "x": 6.03,
+      "y": 62.45,
+      "type": "path",
+      "name": "Path Node 51"
+    },
+    {
+      "x": 7.83,
+      "y": 62.45,
+      "type": "path",
+      "name": "Path Node 52"
+    },
+    {
+      "x": 12.18,
+      "y": 62.45,
+      "type": "path",
+      "name": "Path Node 53"
+    },
+    {
+      "x": 16.28,
+      "y": 62.45,
+      "type": "path",
+      "name": "Path Node 54"
+    },
+    {
+      "x": 12.13,
+      "y": 59.45,
+      "type": "path",
+      "name": "Path Node 55"
+    },
+    {
+      "x": 7.83,
+      "y": 59.45,
+      "type": "path",
+      "name": "Path Node 56"
+    },
+    {
+      "x": 48.38,
+      "y": 32.6,
+      "type": "path",
+      "name": "Path Node 57"
+    },
+    {
+      "x": 48.38,
+      "y": 16.55,
+      "type": "path",
+      "name": "Path Node 58"
+    },
+    {
+      "x": 63.43,
+      "y": 16.55,
+      "type": "path",
+      "name": "Path Node 59"
+    },
+    {
+      "x": 67.83,
+      "y": 16.55,
+      "type": "path",
+      "name": "Path Node 60"
+    },
+    {
+      "x": 71.18,
+      "y": 16.55,
+      "type": "path",
+      "name": "Path Node 61"
+    },
+    {
+      "x": 67.88,
+      "y": 28.25,
+      "type": "path",
+      "name": "Path Node 62"
+    },
+    {
+      "x": 67.88,
+      "y": 35.85,
+      "type": "path",
+      "name": "Path Node 63"
+    },
+    {
+      "x": 71.98,
+      "y": 35.85,
+      "type": "path",
+      "name": "Path Node 64"
+    },
+    {
+      "x": 78.78,
+      "y": 35.85,
+      "type": "path",
+      "name": "Path Node 65"
+    },
+    {
+      "x": 85.23,
+      "y": 35.85,
+      "type": "path",
+      "name": "Path Node 66"
+    },
+    {
+      "x": 89.93,
+      "y": 35.85,
+      "type": "path",
+      "name": "Path Node 67"
+    },
+    {
+      "x": 89.93,
+      "y": 30.75,
+      "type": "path",
+      "name": "Path Node 68"
+    },
+    {
+      "x": 89.93,
+      "y": 25.4,
+      "type": "path",
+      "name": "Path Node 69"
+    },
+    {
+      "x": 89.93,
+      "y": 21.15,
+      "type": "path",
+      "name": "Path Node 70"
+    },
+    {
+      "x": 90.08,
+      "y": 16.55,
+      "type": "path",
+      "name": "Path Node 71"
+    },
+    {
+      "x": 90.08,
+      "y": 4.4,
+      "type": "path",
+      "name": "Path Node 72"
+    },
+    {
+      "x": 90.08,
+      "y": 12.65,
+      "type": "path",
+      "name": "Path Node 73"
+    },
+    {
+      "x": 91.43,
+      "y": 12.7,
+      "type": "path",
+      "name": "Path Node 74"
+    },
+    {
+      "x": 94.48,
+      "y": 16.55,
+      "type": "path",
+      "name": "Path Node 75"
+    },
+    {
+      "x": 16.33,
+      "y": 89.3,
+      "type": "path",
+      "name": "Fix 1"
+    }
+  ]
+}
