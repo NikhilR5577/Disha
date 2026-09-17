@@ -7,7 +7,7 @@ from app.models.database import SessionLocal, engine
 from app.models import schema
 
 def reset_and_seed_db():
-    db_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'navcare.db')
+    db_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'disha.db')
     if os.path.exists(db_path):
         os.remove(db_path)
         print(f"Deleted old database at {db_path}")

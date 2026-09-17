@@ -2,28 +2,16 @@ import qrcode
 from fpdf import FPDF
 import os
 
-# 20 High-Value Locations
+# Disha Locations (Rooms Only)
 locations = [
-    ("r0", "MAIN ENTRANCE"),
-    ("r60", "ENTRANCE NO. 2"),
-    ("r7", "HELP DESK"),
-    ("r6", "EMERGENCY ROOM"),
-    ("r41", "PHARMACY"),
-    ("r47", "BLOOD BANK"),
-    ("r46", "PATHOLOGY"),
-    ("r19", "ORTHOPEDIC OPD"),
-    ("r17", "SURGICAL OPD"),
-    ("r9", "MEDICINE OPD"),
-    ("r23", "X-RAY ROOM"),
-    ("r25", "SONOGRAPHY ROOM"),
-    ("r37", "WARD NO. 1"),
-    ("r38", "WARD NO. 2"),
-    ("r33", "WARD NO. 3"),
-    ("r34", "WARD NO. 4"),
-    ("r49", "MATERNITY WARD"),
-    ("r42", "ICU"),
-    ("r43", "CT SCAN"),
-    ("r29", "MEDICAL BOARD")
+    ("d_main_entrance", "MAIN ENTRANCE"),
+    ("d_reception", "RECEPTION / INQUIRY"),
+    ("d_general_opd", "GENERAL OPD"),
+    ("d_pathology", "PATHOLOGY LAB"),
+    ("d_blood_bank", "BLOOD BANK"),
+    ("d_icu", "ICU"),
+    ("d_male_ward", "GENERAL MALE WARD"),
+    ("d_labour", "LABOUR ROOM")
 ]
 
 class PosterPDF(FPDF):
@@ -47,10 +35,10 @@ for loc_id, loc_name in locations:
         pdf.set_font("helvetica", "B", 35)
         
     pdf.set_y(35)
-    pdf.multi_cell(0, 20, loc_name, align='C', new_x="LMARGIN", new_y="NEXT")
+    pdf.multi_cell(0, 20, loc_name, align='C')
     
-    # Generate QR Code
-    qr_data = f"https://navcare.vercel.app/?start={loc_id}"
+    # Generate QR Code (Using localhost for hackathon demo, or vercel if deployed)
+    qr_data = f"http://localhost:5173/?start={loc_id}"
     qr = qrcode.QRCode(
         version=1,
         error_correction=qrcode.constants.ERROR_CORRECT_H,
@@ -82,13 +70,13 @@ for loc_id, loc_name in locations:
     pdf.set_y(250)
     pdf.set_font("helvetica", "B", 25)
     pdf.set_text_color(220, 53, 69) # Red color for attention
-    pdf.cell(0, 15, "SCAN THIS QR CODE", align='C', new_x="LMARGIN", new_y="NEXT")
+    pdf.cell(0, 15, "SCAN THIS QR CODE", align='C')
     
     pdf.set_y(265)
     pdf.set_font("helvetica", "B", 20)
     pdf.set_text_color(0, 0, 0)
-    pdf.cell(0, 10, "TO NAVIGATE THE HOSPITAL", align='C', new_x="LMARGIN", new_y="NEXT")
+    pdf.cell(0, 10, "TO NAVIGATE THE HOSPITAL", align='C')
 
-output_path = "NavCare_QR_Posters.pdf"
+output_path = "Disha_QR_Posters.pdf"
 pdf.output(output_path)
 print(f"Generated {output_path}")
