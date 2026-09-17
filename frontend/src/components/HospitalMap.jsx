@@ -179,6 +179,41 @@ const HospitalMap = ({ locations, route }) => {
           </div>
         </TransformComponent>
       </TransformWrapper>
+
+      {/* Floating Floor Switcher Buttons */}
+      <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex bg-white rounded-full shadow-lg border border-slate-200 p-1 z-50">
+        <button 
+          onClick={() => {
+            if (!transformRef.current || !containerRef.current) return;
+            const cw = containerRef.current.clientWidth;
+            const ch = containerRef.current.clientHeight;
+            const sX = cw / SVG_W; const sY = ch / SVG_H;
+            const bboxW = SVG_W * sX; const bboxH = 571 * sY;
+            const scale = Math.min(cw / bboxW, ch / bboxH, 4) * 0.95;
+            const cx = (SVG_W / 2) * sX; const cy = (571 / 2) * sY;
+            transformRef.current.setTransform(cw / 2 - cx * scale, ch / 2 - cy * scale, scale, 600, 'easeOut');
+          }}
+          className="px-6 py-2 rounded-full text-sm font-semibold transition-colors hover:bg-orange-50 hover:text-orange-600 focus:outline-none"
+        >
+          Ground Floor
+        </button>
+        <button 
+          onClick={() => {
+            if (!transformRef.current || !containerRef.current) return;
+            const cw = containerRef.current.clientWidth;
+            const ch = containerRef.current.clientHeight;
+            const sX = cw / SVG_W; const sY = ch / SVG_H;
+            const bboxW = SVG_W * sX; const bboxH = 571 * sY;
+            const scale = Math.min(cw / bboxW, ch / bboxH, 4) * 0.95;
+            const cx = (SVG_W / 2) * sX; const cy = (571 + 571 / 2) * sY;
+            transformRef.current.setTransform(cw / 2 - cx * scale, ch / 2 - cy * scale, scale, 600, 'easeOut');
+          }}
+          className="px-6 py-2 rounded-full text-sm font-semibold transition-colors hover:bg-orange-50 hover:text-orange-600 focus:outline-none"
+        >
+          First Floor
+        </button>
+      </div>
+
     </div>
   );
 };
