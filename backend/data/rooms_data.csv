@@ -1,9 +1,68 @@
-id,name_en,name_hi,floor,category,search_keywords_en,search_keywords_hi,is_room
-d_main_entrance,Main Entrance,मुख्य द्वार,1,entrance,"entrance, gate, front","गेट, मुख्य, द्वार",1
-d_reception,Reception,पूछताछ,1,reception,"reception, info, help","पूछताछ, मदद, रिसेप्शन",1
-d_doctor,Doctor OPD,डॉक्टर ओपीडी,1,doctor,"doctor, physician, consult","डॉक्टर, चिकित्सक",1
-d_pharmacy,Pharmacy,दवाखाना,1,pharmacy,"pharmacy, medicine, pills","दवा, दवाई, दवाखाना",1
-n_hall_1,Hall 1,हॉल 1,1,hall,,,0
-n_hall_2,Hall 2,हॉल 2,1,hall,,,0
-n_hall_left,Hall Left,हॉल बायाँ,1,hall,,,0
-n_hall_right,Hall Right,हॉल दायाँ,1,hall,,,0
+No,English Name,Hindi Name,English Aliases,Hindi / Hinglish Aliases,Keywords (order-independent),Disambiguation Group
+1,Main Entrance,मुख्य द्वार,"main gate, front gate, entry gate, entrance","मेन गेट, मुख्य गेट, एंट्री",main entrance gate मुख्य द्वार मेन गेट एंट्री,
+2,Ambulance Bay,एम्बुलेंस बे,"ambulance, ambulance parking, ambulance stand","एम्बुलेंस, एम्बुलेंस खड़ी जगह",ambulance bay एम्बुलेंस,
+3,Reception,स्वागत कक्ष,"reception, front desk, registration counter, OPD slip counter, inquiry","रिसेप्शन, पर्ची काउंटर, पूछताछ",reception स्वागत रिसेप्शन पर्ची काउंटर,
+4,Casualty,आकस्मिक विभाग,"casualty, emergency, ER, accident ward","कैजुअल्टी, इमरजेंसी, दुर्घटना वार्ड",casualty accident हादसा आकस्मिक कैजुअल्टी दुर्घटना,
+5,Dressing Room,पट्टी कक्ष,"dressing room, bandage room, wound dressing","ड्रेसिंग रूम, पट्टी वाला कमरा, पट्टी रूम",dressing bandage wound पट्टी ड्रेसिंग,
+6,Psychiatry Department,मनोचिकित्सा विभाग,"psychiatry, mental health department, psychiatric OPD","मानसिक रोग विभाग, मनोरोग विभाग, दिमाग का डॉक्टर",psychiatry mental pagal dimag मनोचिकित्सा मानसिक मनोरोग दिमाग,
+7,Emergency Room,आपातकालीन कक्ष,"emergency room, ER, emergency ward, trauma","इमरजेंसी, इमरजेंसी रूम, आपातकाल",emergency room trauma इमरजेंसी आपातकाल,
+8,Help Desk,सहायता केंद्र,"help desk, information desk, inquiry, info counter","हेल्प डेस्क, पूछताछ, जानकारी केंद्र",help desk information inquiry हेल्प डेस्क पूछताछ जानकारी,HELPDESK
+9,E.C.G. Room,ई.सी.जी. कक्ष,"ECG room, ECG, cardiogram room, heart test room","ईसीजी रूम, ईसीजी, दिल की जांच",ecg cardiogram heart ईसीजी दिल,
+10,Medicine OPD,मेडिसिन ओपीडी,"medicine OPD, general medicine, physician OPD, general physician","दवाखाना, मेडिसिन डॉक्टर, जनरल डॉक्टर",medicine general physician opd daktar मेडिसिन जनरल डॉक्टर,
+11,Medical Specialist,चिकित्सा विशेषज्ञ,"medical specialist, specialist doctor, senior doctor","विशेषज्ञ डॉक्टर, बड़े डॉक्टर",specialist senior विशेषज्ञ बड़े डॉक्टर,
+12,NCD Clinic,गैर-संचारी रोग क्लिनिक,"NCD clinic, non communicable disease clinic, diabetes clinic, BP clinic, sugar clinic","एनसीडी क्लिनिक, शुगर क्लिनिक, बीपी क्लिनिक",ncd diabetes sugar bp madhumeh blood pressure एनसीडी शुगर बीपी,
+13,Washroom,शौचालय,"washroom, toilet, restroom, bathroom, loo","वॉशरूम, टॉयलेट, बाथरूम, संडास",washroom toilet bathroom restroom sandas latrine shauchalay shauchalaya sauchalay sauchalaya peshab pakhana शौचालय वॉशरूम टॉयलेट बाथरूम संडास,
+14,Nursing Staff,नर्सिंग स्टाफ,"nursing staff, nurse station, nurse room","नर्सिंग स्टाफ, नर्स रूम, नर्स कक्ष",nursing nurse नर्सिंग नर्स,
+15,Store Room,भंडार कक्ष,"store room, storage, supply room","स्टोर रूम, भंडार, गोदाम",store storage supply स्टोर भंडार गोदाम,
+16,Dental Clinic,दंत चिकित्सालय,"dental clinic, dentist, tooth clinic","डेंटल क्लिनिक, दांत का डॉक्टर, दंत चिकित्सक",dental dentist tooth clinic डेंटल दांत दंत चिकित्सक क्लिनिक,DENTAL
+17,Dental OPD,दंत ओपीडी,"dental OPD, teeth OPD, tooth OPD","दांत वाली ओपीडी, दंत ओपीडी",dental teeth tooth opd दांत दंत ओपीडी,DENTAL
+18,Surgical OPD,सर्जिकल ओपीडी,"surgical OPD, surgery OPD, surgeon OPD","ऑपरेशन वाला डॉक्टर, सर्जरी ओपीडी",surgical surgery surgeon opd सर्जरी सर्जिकल ऑपरेशन ओपीडी,
+19,ENT OPD,नाक कान गला ओपीडी,"ENT, ear nose throat, ENT OPD, ENT doctor","ईएनटी, नाक कान गला डॉक्टर",ent ear nose throat ईएनटी नाक कान गला,
+20,Orthopedic OPD,हड्डी रोग ओपीडी,"ortho, orthopedic, bone doctor, bone OPD, orthopedic OPD","हड्डी का डॉक्टर, हड्डी रोग ओपीडी, हड्डी वाला डॉक्टर",ortho orthopedic bone haddi toot fracture हड्डी ऑर्थो,
+21,Plaster Room,प्लास्टर कक्ष,"plaster room, cast room","प्लास्टर रूम, प्लास्टर कक्ष",plaster cast प्लास्टर,
+22,Anti Rabies Room,एंटी रेबीज कक्ष,"anti rabies, rabies injection, dog bite injection, dog bite room","कुत्ते का इंजेक्शन, रेबीज इंजेक्शन, कुत्ता काटने का इलाज",rabies dog bite injection kutta kata रेबीज कुत्ता इंजेक्शन,
+23,X-Ray Panjian,एक्स-रे पंजीयन,"X-ray registration, X-ray slip, X-ray counter","एक्सरे पर्ची, एक्सरे रजिस्ट्रेशन, एक्सरे पंजीयन",xray x-ray registration slip counter panjian एक्सरे पर्ची रजिस्ट्रेशन पंजीयन,XRAY
+24,X-Ray Room (Radiology Department),एक्स-रे कक्ष / रेडियोलॉजी विभाग,"X-ray room, X-ray, radiology, radiology department","एक्सरे रूम, एक्सरे, रेडियोलॉजी",xray x-ray radiology room एक्सरे रेडियोलॉजी रूम,XRAY
+25,DEIC (District Early Intervention Centre),जिला प्रारंभिक हस्तक्षेप केंद्र,"DEIC, early intervention centre, child development centre","डीईआईसी, बाल विकास केंद्र",deic early intervention child development डीईआईसी बाल विकास,
+26,Sonography Room,सोनोग्राफी कक्ष,"sonography, ultrasound, USG, scan room","सोनोग्राफी, अल्ट्रासाउंड, स्कैन रूम",sonography ultrasound usg scan सोनोग्राफी अल्ट्रासाउंड स्कैन,SONO
+27,Drug/Medicine Store Room,दवा भंडार,"medicine store room, drug store room, medicine storage","दवा भंडार, स्टोर रूम",drug medicine store room bhander दवा भंडार स्टोर,MEDSTORE
+28,RMO Office,आरएमओ कार्यालय,"RMO office, resident medical officer","आरएमओ रूम, आरएमओ ऑफिस",rmo resident medical officer office आरएमओ ऑफिस,
+29,Quality Branch,गुणवत्ता शाखा,"quality branch, quality department, QA","क्वालिटी ब्रांच, गुणवत्ता शाखा",quality qa branch क्वालिटी गुणवत्ता शाखा,
+30,Medical Board,मेडिकल बोर्ड,"medical board, board room, disability board","मेडिकल बोर्ड, बोर्ड रूम",medical board disability मेडिकल बोर्ड,
+31,Civil Surgeon Office,सिविल सर्जन कार्यालय,"civil surgeon office, CS office, chief medical officer office, CMO office","सिविल सर्जन ऑफिस, सीएस ऑफिस",civil surgeon cs cmo office सिविल सर्जन ऑफिस,
+32,Park,बगीचा,"park, garden","पार्क, बगीचा",park garden पार्क बगीचा,
+33,Record Room,रिकॉर्ड कक्ष,"record room, medical records, file room","रिकॉर्ड रूम, फाइल रूम",record file रिकॉर्ड फाइल,
+34,Ward No. 1 - Male Medical Ward,वार्ड नंबर 1 - पुरुष मेडिकल वार्ड,"ward 1, ward one, ward number 1, male medical ward","वार्ड नंबर 1, वार्ड 1, वार्ड एक, पहला वार्ड",ward one 1 male medical वार्ड एक पहला पुरुष मेडिकल,WARD
+35,Ward No. 2 - Male Surgical & Trauma Ward,वार्ड नंबर 2 - पुरुष सर्जिकल एवं ट्रॉमा वार्ड,"ward 2, ward two, ward number 2, trauma ward, surgical ward","वार्ड नंबर 2, वार्ड 2, वार्ड दो, ट्रॉमा वार्ड, दूसरा वार्ड",ward two 2 male surgical trauma वार्ड दो दूसरा पुरुष सर्जिकल ट्रॉमा,WARD
+36,Ward No. 3 - General Male Ward,वार्ड नंबर 3 - जनरल पुरुष वार्ड,"ward 3, ward three, ward number 3, general male ward","वार्ड नंबर 3, वार्ड 3, वार्ड तीन, तीसरा वार्ड",ward three 3 general male वार्ड तीन तीसरा जनरल पुरुष,WARD
+37,Ward No. 4 - Male Surgery Ward,वार्ड नंबर 4 - पुरुष सर्जरी वार्ड,"ward 4, ward four, ward number 4, male surgery ward","वार्ड नंबर 4, वार्ड 4, वार्ड चार, चौथा वार्ड",ward four 4 male surgery वार्ड चार चौथा पुरुष सर्जरी,WARD
+38,Ward No. 5 - Female Surgery Ward,वार्ड नंबर 5 - महिला सर्जरी वार्ड,"ward 5, ward five, ward number 5, female surgery ward","वार्ड नंबर 5, वार्ड 5, वार्ड पांच, पांचवां वार्ड",ward five 5 female surgery वार्ड पांच पांचवां महिला सर्जरी,WARD
+39,Ward No. 6 - Female Medical Ward,वार्ड नंबर 6 - महिला मेडिकल वार्ड,"ward 6, ward six, ward number 6, female medical ward","वार्ड नंबर 6, वार्ड 6, वार्ड छह, छठा वार्ड",ward six 6 female medical वार्ड छह छठा महिला मेडिकल,WARD
+40,Kitchen,रसोई,kitchen,"किचन, रसोई",kitchen nasta nashta khana bhojan chai pani naasta khane peene canteen food bhook bhookh hungry hunger pet pyaas pyas thirsty mess भूख किचन रसोई खाना नाश्ता भोजन,
+41,Umang Swasth Kendre,उमंग स्वास्थ्य केंद्रे,Umang Kendre,उमंग केंद्रे,umang kendre उमंग केंद्रे,MEDSTORE
+42,Pharmacy,औषधालय,"pharmacy, medical store, chemist, drug store, dispensary, medicine shop","फार्मेसी, दवाई की दुकान, मेडिकल स्टोर, दवाखाना",pharmacy medical store chemist dispensary dabai dawai dawa davai aushadhi दवाई दुकान मेडिकल स्टोर दवाखाना फार्मेसी औषधालय,MEDSTORE
+43,ICU,गहन चिकित्सा इकाई,"ICU, intensive care unit, critical care","आईसीयू, गहन चिकित्सा",icu intensive care आईसीयू गहन चिकित्सा,
+44,CT Scan,सीटी स्कैन,"CT scan, CAT scan, CT room","सीटी स्कैन, सीटी स्कैन रूम",ct scan cat सीटी स्कैन,
+45,Dialysis Centre,डायलिसिस केंद्र,"dialysis, dialysis centre, kidney treatment, dialysis room","डायलिसिस, डायलिसिस केंद्र, गुर्दे का इलाज",dialysis kidney डायलिसिस गुर्दे,
+46,Waiting Room,प्रतीक्षा कक्ष,"waiting room, waiting area, lobby","वेटिंग रूम, प्रतीक्षा कक्ष",waiting lobby वेटिंग प्रतीक्षा,
+47,Pathology,रोगविज्ञान,"pathology, lab, laboratory, blood test, test room","पैथोलॉजी, जांच घर, टेस्ट रूम, ब्लड टेस्ट, लैब",pathology lab laboratory blood test jaanch पैथोलॉजी लैब जांच टेस्ट ब्लड,
+48,Blood Bank,रक्त बैंक,blood bank,"ब्लड बैंक, रक्त बैंक",blood bank khoon rakt ब्लड बैंक रक्त,
+49,Badminton Court,बैडमिंटन कोर्ट,"badminton court, sports court, play area","बैडमिंटन कोर्ट, खेल का मैदान",badminton sports बैडमिंटन खेल,
+50,Maternity Ward,प्रसूति वार्ड,"maternity ward, delivery ward, maternity","जच्चा वार्ड, प्रसूति वार्ड",maternity delivery ward जच्चा प्रसूति वार्ड,
+51,Labour Room,प्रसव कक्ष,"labour room, delivery room, birthing room","डिलीवरी रूम, प्रसव कक्ष, जच्चा कमरा",labour labor room delivery birthing डिलीवरी प्रसव जच्चा,
+52,Gynae & Obs Operation Theatre,स्त्री रोग एवं प्रसूति ऑपरेशन थियेटर,"OT, operation theatre, gynae OT, obs OT, surgery room","ओटी, ऑपरेशन थियेटर, ऑपरेशन कक्ष",ot operation theatre gynae obs surgery ओटी ऑपरेशन थियेटर,
+53,ANC Ward,प्रसव पूर्व जांच वार्ड,"ANC, antenatal care, pregnancy checkup ward","गर्भवती जांच वार्ड, प्रसव पूर्व जांच",anc antenatal pregnancy checkup गर्भवती जांच प्रसव पूर्व,
+54,STI/RTI Clinic,एसटीआई/आरटीआई क्लिनिक,"STI clinic, RTI clinic, STD clinic","एसटीआई क्लिनिक, गुप्त रोग क्लिनिक",sti rti std एसटीआई आरटीआई गुप्त रोग,
+55,Female Wash Room,महिला शौचालय,"ladies washroom, ladies toilet, female toilet, women's restroom","लेडीज टॉयलेट, महिला शौचालय",ladies female toilet washroom लेडीज महिला टॉयलेट,
+56,Obstetric & Gynecology OPD,स्त्री रोग ओपीडी,"gynae OPD, obs OPD, gynecology, women's OPD, lady doctor","महिला डॉक्टर, लेडी डॉक्टर, स्त्री रोग ओपीडी",gynae obs gynecology women lady doctor स्त्री रोग महिला लेडी डॉक्टर,
+57,Sonography for Pregnant Women,गर्भवती महिला सोनोग्राफी,"pregnancy ultrasound, pregnancy scan, ANC ultrasound","गर्भवती अल्ट्रासाउंड, प्रेगनेंसी स्कैन",sonography pregnant pregnancy woman women ultrasound scan anc गर्भवती अल्ट्रासाउंड प्रेगनेंसी स्कैन महिला garbhvati,SONO
+58,Family Welfare Counselling & Registration Room,परिवार कल्याण परामर्श एवं पंजीकरण कक्ष,"family planning, family welfare, counselling room","परिवार नियोजन, परिवार कल्याण",family planning welfare counselling परिवार नियोजन कल्याण,
+59,Vaccination Room,टीकाकरण कक्ष,"vaccination, immunization room, vaccine room, injection room","टीकाकरण, टीका रूम, इंजेक्शन रूम",vaccination immunization vaccine injection teeka tikakaran टीकाकरण टीका इंजेक्शन,
+60,Help Desk / Registration,सहायता केंद्र / पंजीकरण,"registration, help desk, OPD slip counter, entry counter","पर्ची काउंटर, रजिस्ट्रेशन काउंटर",help desk registration entrance two हेल्प डेस्क पर्ची रजिस्ट्रेशन,HELPDESK
+61,Entrance No. 2,प्रवेश द्वार संख्या 2,"gate 2, entrance 2, second gate, second entrance","गेट नंबर 2, दूसरा गेट, दूसरा द्वार",gate entrance two 2 second गेट नंबर दो दूसरा,
+62,Pedia & Gynae Medicine,बाल एवं स्त्री रोग चिकित्सा,"pediatric and gynae medicine, child and women medicine",बाल एवं स्त्री रोग विभाग,pediatric gynae medicine child women बाल स्त्री रोग,
+63,Focal Point,फोकल पॉइंट,"focal point, information point","फोकल पॉइंट, जानकारी बिंदु",focal point फोकल पॉइंट,
+64,SNCU Ward,एसएनसीयू वार्ड,"SNCU, newborn care unit, special newborn care","एसएनसीयू, नवजात गहन देखभाल वार्ड",sncu newborn नवजात एसएनसीयू,
+65,NRC Ward,एनआरसी वार्ड,"NRC, nutrition rehabilitation centre, malnutrition ward","एनआरसी, पोषण पुनर्वास केंद्र, कुपोषण वार्ड",nrc nutrition rehabilitation malnutrition एनआरसी पोषण कुपोषण,
+66,PICU Ward,पीआईसीयू वार्ड,"PICU, pediatric intensive care","पीआईसीयू, बाल गहन देखभाल वार्ड",picu pediatric intensive बाल गहन पीआईसीयू,
+67,Pediatric Ward,बाल रोग वार्ड,"pediatric ward, children's ward, kids ward, child ward","बच्चों का वार्ड, बाल रोग वार्ड",pediatric children kids child bachcha bachchon बच्चों बाल रोग,

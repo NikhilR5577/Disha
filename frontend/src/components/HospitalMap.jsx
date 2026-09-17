@@ -76,15 +76,15 @@ const HospitalMap = ({ locations, route }) => {
         wheel={{ step: 0.1 }}
       >
         <TransformComponent wrapperClass="!w-full !h-full" contentClass="!w-full !h-full flex items-center justify-center">
-          {/* This wrapper ensures the SVG and IMG exactly match dimensions */}
-          <div className="relative max-w-full max-h-full">
-            <img 
-              src={mapImage} 
-              alt={`Disha Demo Map`}
-              className="max-w-full max-h-full w-auto h-auto opacity-95 pointer-events-none select-none block"
-            />
+          {/* Container exactly matching the aspect ratio of the 2-floor map */}
+          <div className="relative" style={{ width: '100%', height: 'auto', aspectRatio: `${SVG_W}/${SVG_H}`, maxWidth: '100%', maxHeight: '100%' }}>
+            {/* Background images stacked vertically */}
+            <div className="absolute top-0 left-0 w-full h-full flex flex-col pointer-events-none select-none opacity-95">
+              <img src="/ground_floor.png" alt="Ground Floor" className="w-full h-1/2 object-cover block" />
+              <img src="/first_floor.png" alt="First Floor" className="w-full h-1/2 object-cover block" />
+            </div>
             
-            {/* Overlay SVG for plotting points and lines */}
+            {/* Overlay SVG for plotting points, lines, and titles */}
             <svg 
               viewBox={viewBox} 
               className="absolute top-0 left-0 w-full h-full"
@@ -96,6 +96,13 @@ const HospitalMap = ({ locations, route }) => {
                   <feComposite in="SourceGraphic" in2="blur" operator="over" />
                 </filter>
               </defs>
+
+              {/* Obscure original map text and render our own titles */}
+              <rect x="250" y="20" width="550" height="90" fill="#ffffff" />
+              <text x="512" y="70" fontFamily="sans-serif" fontSize="42" fontWeight="900" fill="#F97316" textAnchor="middle">Disha - Ground Floor</text>
+
+              <rect x="250" y="591" width="550" height="90" fill="#ffffff" />
+              <text x="512" y="641" fontFamily="sans-serif" fontSize="42" fontWeight="900" fill="#F97316" textAnchor="middle">Disha - First Floor</text>
 
               {/* Draw Route Line */}
               {routePoints && currentFloorSteps.length > 1 && (
