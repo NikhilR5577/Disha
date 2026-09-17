@@ -1,33 +1,43 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import { TransformWrapper, TransformComponent } from 'react-zoom-pan-pinch';
 
 const SVG_W = 1024;
-const SVG_H = 1142;
+const SVG_H = 571;
 const PADDING = 50; // SVG units of padding around the route bounding box
 
 const HospitalMap = ({ locations, route }) => {
-  // SVG coordinates map to the absolute pixel size of the original SVG
+  const [activeFloor, setActiveFloor] = useState(1);
   const viewBox = `0 0 ${SVG_W} ${SVG_H}`;
-  const mapImage = "/map_final.svg?v=4";
-  const currentLocations = locations;
+  const mapImage = activeFloor === 1 ? "/ground_floor.png" : "/first_floor.png";
+  
+  // Filter nodes/locations by floor
+  const currentLocations = locations.filter(loc => loc.floor === activeFloor || loc.floor === undefined);
 
-  // Use raw path coordinates for drawing the line so it doesn't cut through corners,
-  // fallback to route.steps for backward compatibility with older API versions.
-  const currentFloorSteps = route?.path_coords || route?.steps || [];
+  // Filter route points to only show those on the currently active floor
+  const allFloorSteps = route?.path_coords || route?.steps || [];
+  const currentFloorSteps = allFloorSteps.filter(node => node.floor === activeFloor || node.floor === undefined);
   const routePoints = currentFloorSteps.map(node => `${node.x},${node.y}`).join(' ');
 
-  // Calculate dynamic duration based on the distance (min 15s, max 45s) for a realistic GPS illusion
+  // Switch to the floor of the start location when a new route is loaded
+  useEffect(() => {
+    if (allFloorSteps.length > 0) {
+      const firstStep = allFloorSteps[0];
+      if (firstStep.floor) {
+        setActiveFloor(firstStep.floor);
+      }
+    }
+  }, [route]);
+
   const floorDistance = currentFloorSteps.reduce((sum, step) => sum + (step.distance || 0), 0);
   const animationDur = floorDistance > 0 ? Math.max(15, Math.min(45, floorDistance / 80)) : 15;
 
-  // Refs for auto-zoom to fit route
   const transformRef = useRef(null);
   const containerRef = useRef(null);
 
+  // Auto zoom/pan when route changes or floor changes
   useEffect(() => {
-    if (!route || currentFloorSteps.length < 2 || !transformRef.current || !containerRef.current) return;
+    if (currentFloorSteps.length < 2 || !transformRef.current || !containerRef.current) return;
 
-    // Give the DOM a moment to settle before reading dimensions
     const timer = setTimeout(() => {
       const xs = currentFloorSteps.map(n => n.x);
       const ys = currentFloorSteps.map(n => n.y);
@@ -40,22 +50,17 @@ const HospitalMap = ({ locations, route }) => {
       const containerW = container.clientWidth;
       const containerH = container.clientHeight;
 
-      // SVG unit → pixel ratio (preserveAspectRatio="none" means it stretches to fill)
       const svgToPxX = containerW / SVG_W;
       const svgToPxY = containerH / SVG_H;
 
-      // Bounding box dimensions in pixels (at scale=1)
       const bboxW = (maxX - minX) * svgToPxX;
       const bboxH = (maxY - minY) * svgToPxY;
 
-      // Scale to fit the bounding box with a little breathing room
       const scale = Math.min(containerW / bboxW, containerH / bboxH, 4) * 0.9;
 
-      // Center of the bounding box in pixels (at scale=1)
       const centerXPx = ((minX + maxX) / 2) * svgToPxX;
       const centerYPx = ((minY + maxY) / 2) * svgToPxY;
 
-      // Translate so the bounding box center lands in the middle of the container
       const posX = containerW / 2 - centerXPx * scale;
       const posY = containerH / 2 - centerYPx * scale;
 
@@ -63,10 +68,10 @@ const HospitalMap = ({ locations, route }) => {
     }, 150);
 
     return () => clearTimeout(timer);
-  }, [route]);
+  }, [route, activeFloor]);
 
   return (
-    <div ref={containerRef} className="relative w-full h-full overflow-hidden bg-white shadow-sm flex items-center justify-center">
+    <div ref={containerRef} className="relative w-full h-full overflow-hidden bg-[#e5e7eb] shadow-sm flex items-center justify-center">
       <TransformWrapper
         ref={transformRef}
         initialScale={1}
@@ -76,20 +81,11 @@ const HospitalMap = ({ locations, route }) => {
         wheel={{ step: 0.1 }}
       >
         <TransformComponent wrapperClass="!w-full !h-full" contentClass="!w-full !h-full flex items-center justify-center">
-          {/* Container exactly matching the aspect ratio of the 2-floor map */}
-          <div className="relative" style={{ width: '100%', height: 'auto', aspectRatio: `${SVG_W}/${SVG_H}`, maxWidth: '100%', maxHeight: '100%' }}>
-            {/* Background images stacked vertically */}
-            <div className="absolute top-0 left-0 w-full h-full flex flex-col pointer-events-none select-none opacity-95">
-              <img src="/ground_floor.png" alt="Ground Floor" className="w-full h-1/2 object-cover block" />
-              <img src="/first_floor.png" alt="First Floor" className="w-full h-1/2 object-cover block" />
-            </div>
+          <div className="relative" style={{ width: '100%', height: 'auto', aspectRatio: `${SVG_W}/${SVG_H}`, maxWidth: '100%', maxHeight: '100%', backgroundColor: '#fff' }}>
             
-            {/* Overlay SVG for plotting points, lines, and titles */}
-            <svg 
-              viewBox={viewBox} 
-              className="absolute top-0 left-0 w-full h-full"
-              preserveAspectRatio="none"
-            >
+            <img src={mapImage} alt={`Floor ${activeFloor}`} className="absolute top-0 left-0 w-full h-full object-cover block pointer-events-none select-none opacity-95" />
+            
+            <svg viewBox={viewBox} className="absolute top-0 left-0 w-full h-full" preserveAspectRatio="none">
               <defs>
                 <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
                   <feGaussianBlur stdDeviation="15" result="blur" />
@@ -97,60 +93,23 @@ const HospitalMap = ({ locations, route }) => {
                 </filter>
               </defs>
 
-              {/* Obscure original map text and render our own titles */}
               <rect x="250" y="20" width="550" height="90" fill="#ffffff" />
-              <text x="512" y="70" fontFamily="sans-serif" fontSize="42" fontWeight="900" fill="#F97316" textAnchor="middle">Disha - Ground Floor</text>
+              <text x="512" y="70" fontFamily="sans-serif" fontSize="42" fontWeight="900" fill="#F97316" textAnchor="middle">
+                Disha - {activeFloor === 1 ? 'Ground Floor' : 'First Floor'}
+              </text>
 
-              <rect x="250" y="591" width="550" height="90" fill="#ffffff" />
-              <text x="512" y="641" fontFamily="sans-serif" fontSize="42" fontWeight="900" fill="#F97316" textAnchor="middle">Disha - First Floor</text>
-
-              {/* Draw Route Line */}
               {routePoints && currentFloorSteps.length > 1 && (
                 <>
-                  {/* Outer shadow/glow line */}
-                  <polyline
-                    points={routePoints}
-                    fill="none"
-                    stroke="#FDBA74"
-                    strokeWidth="45"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    opacity="0.4"
-                  />
-                  {/* Inner solid line */}
-                  <polyline
-                    points={routePoints}
-                    fill="none"
-                    stroke="#F97316"
-                    strokeWidth="18"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                  {/* Animated dotted path to show direction */}
-                  <polyline
-                    points={routePoints}
-                    fill="none"
-                    stroke="#ffffff"
-                    strokeWidth="6"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeDasharray="15,30"
-                    className="animate-dash"
-                  />
+                  <polyline points={routePoints} fill="none" stroke="#FDBA74" strokeWidth="45" strokeLinecap="round" strokeLinejoin="round" opacity="0.4" />
+                  <polyline points={routePoints} fill="none" stroke="#F97316" strokeWidth="18" strokeLinecap="round" strokeLinejoin="round" />
+                  <polyline points={routePoints} fill="none" stroke="#ffffff" strokeWidth="6" strokeLinecap="round" strokeLinejoin="round" strokeDasharray="15,30" className="animate-dash" />
                   
-                  {/* Blue Dot Tracking */}
                   <circle key={routePoints} r="15" fill="#F97316" stroke="#ffffff" strokeWidth="4">
-                    <animateMotion
-                      key={`anim-${routePoints}`}
-                      dur={`${animationDur}s`}
-                      repeatCount="indefinite"
-                      path={currentFloorSteps.map((n, i) => `${i === 0 ? 'M' : 'L'} ${n.x},${n.y}`).join(' ')}
-                    />
+                    <animateMotion key={`anim-${routePoints}`} dur={`${animationDur}s`} repeatCount="indefinite" path={currentFloorSteps.map((n, i) => `${i === 0 ? 'M' : 'L'} ${n.x},${n.y}`).join(' ')} />
                   </circle>
                 </>
               )}
 
-              {/* Draw Nodes - Only show Start and End to keep map clean */}
               {currentLocations.map((loc) => {
                 const startNodeId = route?.steps?.[0]?.node_id;
                 const destNodeId = route?.steps?.[route.steps.length - 1]?.node_id;
@@ -180,40 +139,20 @@ const HospitalMap = ({ locations, route }) => {
         </TransformComponent>
       </TransformWrapper>
 
-      {/* Floating Floor Switcher Buttons */}
       <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex bg-white rounded-full shadow-lg border border-slate-200 p-1 z-50">
         <button 
-          onClick={() => {
-            if (!transformRef.current || !containerRef.current) return;
-            const cw = containerRef.current.clientWidth;
-            const ch = containerRef.current.clientHeight;
-            const sX = cw / SVG_W; const sY = ch / SVG_H;
-            const bboxW = SVG_W * sX; const bboxH = 571 * sY;
-            const scale = Math.min(cw / bboxW, ch / bboxH, 4) * 0.95;
-            const cx = (SVG_W / 2) * sX; const cy = (571 / 2) * sY;
-            transformRef.current.setTransform(cw / 2 - cx * scale, ch / 2 - cy * scale, scale, 600, 'easeOut');
-          }}
-          className="px-6 py-2 rounded-full text-sm font-semibold transition-colors hover:bg-orange-50 hover:text-orange-600 focus:outline-none"
+          onClick={() => setActiveFloor(1)}
+          className={`px-6 py-2 rounded-full text-sm font-semibold transition-colors focus:outline-none ${activeFloor === 1 ? 'bg-orange-500 text-white' : 'hover:bg-orange-50 hover:text-orange-600'}`}
         >
           Ground Floor
         </button>
         <button 
-          onClick={() => {
-            if (!transformRef.current || !containerRef.current) return;
-            const cw = containerRef.current.clientWidth;
-            const ch = containerRef.current.clientHeight;
-            const sX = cw / SVG_W; const sY = ch / SVG_H;
-            const bboxW = SVG_W * sX; const bboxH = 571 * sY;
-            const scale = Math.min(cw / bboxW, ch / bboxH, 4) * 0.95;
-            const cx = (SVG_W / 2) * sX; const cy = (571 + 571 / 2) * sY;
-            transformRef.current.setTransform(cw / 2 - cx * scale, ch / 2 - cy * scale, scale, 600, 'easeOut');
-          }}
-          className="px-6 py-2 rounded-full text-sm font-semibold transition-colors hover:bg-orange-50 hover:text-orange-600 focus:outline-none"
+          onClick={() => setActiveFloor(2)}
+          className={`px-6 py-2 rounded-full text-sm font-semibold transition-colors focus:outline-none ${activeFloor === 2 ? 'bg-orange-500 text-white' : 'hover:bg-orange-50 hover:text-orange-600'}`}
         >
           First Floor
         </button>
       </div>
-
     </div>
   );
 };

@@ -32,14 +32,14 @@ def reset_and_seed_db():
         schema.NodeDB(id='d_blood_bank', x=800, y=170, floor=1, is_room=True, name='Blood Bank', name_hi='ब्लड बैंक', keywords='blood, donate, bank'),
         schema.NodeDB(id='n_stairs_g', x=800, y=340, floor=1, is_room=True, name='Stairs to First Floor', name_hi='सीढ़ियाँ', keywords='stairs, up'),
         
-        # FIRST FLOOR (y = y_original + 571)
-        schema.NodeDB(id='n_stairs_1', x=110, y=860, floor=2, is_room=True, name='Stairs to Ground Floor', name_hi='सीढ़ियाँ', keywords='stairs, down'),
-        schema.NodeDB(id='n_hall_1_left', x=200, y=860, floor=2, is_room=False, name=None, name_hi=None, keywords=None),
-        schema.NodeDB(id='d_icu', x=200, y=750, floor=2, is_room=True, name='ICU', name_hi='आईसीयू', keywords='icu, intensive, care'),
-        schema.NodeDB(id='n_hall_1_mid', x=300, y=860, floor=2, is_room=False, name=None, name_hi=None, keywords=None),
-        schema.NodeDB(id='d_male_ward', x=300, y=980, floor=2, is_room=True, name='General Male Ward', name_hi='पुरुष वार्ड', keywords='ward, male, bed'),
-        schema.NodeDB(id='n_hall_1_right', x=580, y=860, floor=2, is_room=False, name=None, name_hi=None, keywords=None),
-        schema.NodeDB(id='d_labour', x=580, y=750, floor=2, is_room=True, name='Labour Room', name_hi='लेबर रूम', keywords='labour, delivery, baby'),
+        # FIRST FLOOR
+        schema.NodeDB(id='n_stairs_1', x=110, y=289, floor=2, is_room=True, name='Stairs to Ground Floor', name_hi='सीढ़ियाँ', keywords='stairs, down'),
+        schema.NodeDB(id='n_hall_1_left', x=200, y=289, floor=2, is_room=False, name=None, name_hi=None, keywords=None),
+        schema.NodeDB(id='d_icu', x=200, y=179, floor=2, is_room=True, name='ICU', name_hi='आईसीयू', keywords='icu, intensive, care'),
+        schema.NodeDB(id='n_hall_1_mid', x=300, y=289, floor=2, is_room=False, name=None, name_hi=None, keywords=None),
+        schema.NodeDB(id='d_male_ward', x=300, y=409, floor=2, is_room=True, name='General Male Ward', name_hi='पुरुष वार्ड', keywords='ward, male, bed'),
+        schema.NodeDB(id='n_hall_1_right', x=580, y=289, floor=2, is_room=False, name=None, name_hi=None, keywords=None),
+        schema.NodeDB(id='d_labour', x=580, y=179, floor=2, is_room=True, name='Labour Room', name_hi='लेबर रूम', keywords='labour, delivery, baby'),
     ]
 
     for node in nodes_data:
