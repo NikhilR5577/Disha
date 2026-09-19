@@ -27,8 +27,15 @@ const HospitalMap = ({ locations, route }) => {
     }
   }, [route]);
 
-  const floorDistance = currentFloorSteps.reduce((sum, step) => sum + (step.distance || 0), 0);
-  const animationDur = floorDistance > 0 ? Math.max(15, Math.min(45, floorDistance / 80)) : 15;
+  let floorDistance = 0;
+  for (let i = 1; i < currentFloorSteps.length; i++) {
+    const dx = currentFloorSteps[i].x - currentFloorSteps[i-1].x;
+    const dy = currentFloorSteps[i].y - currentFloorSteps[i-1].y;
+    floorDistance += Math.sqrt(dx * dx + dy * dy);
+  }
+  
+  // Constant speed: 60 pixels per second. Clamp between 3 and 60 seconds.
+  const animationDur = floorDistance > 0 ? Math.max(3, Math.min(60, floorDistance / 60)) : 15;
 
   return (
     <div className="relative w-full h-full overflow-hidden bg-[#e5e7eb] shadow-sm flex items-center justify-center p-4">
