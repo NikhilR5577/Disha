@@ -6,7 +6,7 @@ from app.models import database, schema
 # Create DB tables
 schema.Base.metadata.create_all(bind=database.engine)
 
-app = FastAPI(title="NavCare API", description="Backend for Hospital Wayfinding Platform", version="1.0.0")
+app = FastAPI(title="Disha API", description="Backend for AWS Hackathon Wayfinding Platform", version="1.0.0")
 
 # Configure CORS for frontend access
 app.add_middleware(
@@ -21,7 +21,7 @@ app.include_router(api_router, prefix="/api")
 
 @app.get("/")
 def read_root():
-    return {"message": "Welcome to NavCare API"}
+    return {"message": "Welcome to Disha API"}
 
 @app.get("/api/health")
 def health_check():
