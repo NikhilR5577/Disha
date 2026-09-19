@@ -27,15 +27,27 @@ const HospitalMap = ({ locations, route }) => {
     }
   }, [route]);
 
-  let floorDistance = 0;
-  for (let i = 1; i < currentFloorSteps.length; i++) {
-    const dx = currentFloorSteps[i].x - currentFloorSteps[i-1].x;
-    const dy = currentFloorSteps[i].y - currentFloorSteps[i-1].y;
-    floorDistance += Math.sqrt(dx * dx + dy * dy);
-  }
+  // Animation speed: dot completes the full route in T/4 time, where T is the estimated walking time
+  // Walking time formula (same as App.jsx): T = total_distance * 0.063 / 84 minutes
+  // For per-floor display, scale by the ratio of this floor's pixel distance to total pixel distance
+  const allSteps = route?.path_coords || route?.steps || [];
   
-  // Constant speed: 60 pixels per second. Clamp between 3 and 60 seconds.
-  const animationDur = floorDistance > 0 ? Math.max(3, Math.min(60, floorDistance / 60)) : 15;
+  const calcPixelDist = (steps) => {
+    let d = 0;
+    for (let i = 1; i < steps.length; i++) {
+      const dx = steps[i].x - steps[i-1].x;
+      const dy = steps[i].y - steps[i-1].y;
+      d += Math.sqrt(dx * dx + dy * dy);
+    }
+    return d;
+  };
+  
+  const totalPixelDist = calcPixelDist(allSteps);
+  const floorPixelDist = calcPixelDist(currentFloorSteps);
+  const walkingTimeMinutes = route?.total_distance ? (route.total_distance * 0.063 / 84) : 0;
+  const totalAnimDur = walkingTimeMinutes > 0 ? (walkingTimeMinutes * 60) / 4 : 15;
+  const floorRatio = totalPixelDist > 0 ? floorPixelDist / totalPixelDist : 1;
+  const animationDur = Math.max(3, Math.min(30, totalAnimDur * floorRatio));
 
   return (
     <div className="relative w-full h-full overflow-hidden bg-[#e5e7eb] shadow-sm flex items-center justify-center p-4">
